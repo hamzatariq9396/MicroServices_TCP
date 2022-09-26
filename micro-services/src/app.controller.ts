@@ -15,4 +15,9 @@ export class AppController {
   handleUserCreated(data: CreateEvent) {
     this.appService.handleUserCreated(data);
   }
+  @EventPattern('user-find')
+  handleUserGet(data:any) {
+    console.log(data)
+    this.appService.handleUserGet(data);
+  }
 }

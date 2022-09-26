@@ -6,4 +6,5 @@ export declare class AppService {
     constructor(communicationClient: ClientProxy);
     getHello(): string;
     createUser(createuserdto: CreateUserDto): void;
+    getUser(): void;
 }

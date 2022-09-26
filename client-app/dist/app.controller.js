@@ -26,6 +26,9 @@ let AppController = class AppController {
     CreateUser(createuserdto) {
         return this.appService.createUser(createuserdto);
     }
+    GetUser() {
+        return this.appService.getUser();
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -40,6 +43,12 @@ __decorate([
     __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "CreateUser", null);
+__decorate([
+    (0, common_1.Get)('data'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "GetUser", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

@@ -24,6 +24,10 @@ let AppController = class AppController {
     handleUserCreated(data) {
         this.appService.handleUserCreated(data);
     }
+    handleUserGet(data) {
+        console.log(data);
+        this.appService.handleUserGet(data);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -37,6 +41,12 @@ __decorate([
     __metadata("design:paramtypes", [create_user_event_1.CreateEvent]),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "handleUserCreated", null);
+__decorate([
+    (0, microservices_1.EventPattern)('user-find'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "handleUserGet", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

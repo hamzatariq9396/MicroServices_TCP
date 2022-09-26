@@ -22,4 +22,12 @@ export class AppService {
       new CreateEvent(createuserdto.email),
     );
   }
+ getUser() {
+   console.log(this.users[0].email)
+  this.communicationClient.emit(
+    'user-find',
+    new CreateEvent(this.users[0].email),
+  );
+ }
+
 }

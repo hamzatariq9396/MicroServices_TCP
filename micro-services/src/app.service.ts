@@ -11,4 +11,7 @@ export class AppService {
   handleUserCreated(data: CreateEvent) {
     console.log('handle-userCreated - COMMUNICATION', data);
   }
+  handleUserGet(data:any){
+    console.log('handle-user-find - COMMUNICATION',data);
+  }
 }

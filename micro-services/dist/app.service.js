@@ -15,6 +15,9 @@ let AppService = class AppService {
     handleUserCreated(data) {
         console.log('handle-userCreated - COMMUNICATION', data);
     }
+    handleUserGet(data) {
+        console.log('handle-user-find - COMMUNICATION', data);
+    }
 };
 AppService = __decorate([
     (0, common_1.Injectable)()

@@ -5,4 +5,5 @@ export declare class AppController {
     constructor(appService: AppService);
     getHello(): string;
     CreateUser(createuserdto: CreateUserDto): void;
+    GetUser(): void;
 }

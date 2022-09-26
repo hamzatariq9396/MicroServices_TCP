@@ -28,6 +28,10 @@ let AppService = class AppService {
         this.users.push(createuserdto);
         this.communicationClient.emit('user-created', new create_user_event_1.CreateEvent(createuserdto.email));
     }
+    getUser() {
+        console.log(this.users[0].email);
+        this.communicationClient.emit('user-find', new create_user_event_1.CreateEvent(this.users[0].email));
+    }
 };
 AppService = __decorate([
     (0, common_1.Injectable)(),
