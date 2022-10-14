@@ -26,8 +26,23 @@ let AppController = class AppController {
     CreateUser(createuserdto) {
         return this.appService.createUser(createuserdto);
     }
+    DeleteData(createuserdto) {
+        return this.appService.DeleteData(createuserdto);
+    }
     GetUser() {
         return this.appService.getUser();
+    }
+    getAnalytics() {
+        return this.appService.getAnalytics();
+    }
+    getDeleteAnalytics(createuserdto) {
+        return this.appService.getDeleteData(createuserdto);
+    }
+    FindDataAnalytics(createuserdto) {
+        return this.appService.FindDataAnalytics(createuserdto);
+    }
+    newData(data) {
+        return this.appService.newPostt(data);
     }
 };
 __decorate([
@@ -44,11 +59,45 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "CreateUser", null);
 __decorate([
+    (0, common_1.Delete)('analytics/delete'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "DeleteData", null);
+__decorate([
     (0, common_1.Get)('data'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "GetUser", null);
+__decorate([
+    (0, common_1.Get)('analytics'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "getAnalytics", null);
+__decorate([
+    (0, common_1.Delete)('analytics'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "getDeleteAnalytics", null);
+__decorate([
+    (0, common_1.Get)('ByEmail'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "FindDataAnalytics", null);
+__decorate([
+    (0, common_1.Post)('newData'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "newData", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

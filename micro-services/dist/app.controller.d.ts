@@ -6,4 +6,5 @@ export declare class AppController {
     getHello(): string;
     handleUserCreated(data: CreateEvent): void;
     handleUserGet(data: any): void;
+    newpost(data: any): any;
 }

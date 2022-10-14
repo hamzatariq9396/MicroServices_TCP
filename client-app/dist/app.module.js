@@ -15,12 +15,17 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [microservices_1.ClientsModule.register([
+        imports: [
+            microservices_1.ClientsModule.register([
                 {
-                    name: "COMMUNICATION",
-                    transport: microservices_1.Transport.TCP
-                }
-            ])],
+                    name: 'COMMUNICATION',
+                    transport: microservices_1.Transport.TCP,
+                },
+                { name: 'ANALYTICS',
+                    transport: microservices_1.Transport.TCP,
+                    options: { port: 3001 } },
+            ]),
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

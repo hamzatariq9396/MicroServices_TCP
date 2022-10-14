@@ -20,4 +20,8 @@ export class AppController {
     console.log(data)
     this.appService.handleUserGet(data);
   }
+  @MessagePattern({cmd:"data-new"})
+  newpost(data:any){
+    return this.appService.newPost(data)
+  }
 }

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Delete } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateUserDto } from './create-user.dto';
 
@@ -14,9 +14,28 @@ export class AppController {
   CreateUser(@Body() createuserdto: CreateUserDto) {
     return this.appService.createUser(createuserdto);
   }
-  @Get('data')
-  GetUser(){
-    return this.appService.getUser()
+  @Delete('analytics/delete')
+  DeleteData(@Body() createuserdto: CreateUserDto) {
+    return this.appService.DeleteData(createuserdto);
   }
-  
+  @Get('data')
+  GetUser() {
+    return this.appService.getUser();
+  }
+  @Get('analytics')
+  getAnalytics() {
+    return this.appService.getAnalytics();
+  }
+  @Delete('analytics')
+  getDeleteAnalytics(@Body() createuserdto: CreateUserDto) {
+    return this.appService.getDeleteData(createuserdto);
+  }
+  @Get('ByEmail')
+  FindDataAnalytics(@Body() createuserdto: CreateUserDto){
+    return this.appService.FindDataAnalytics(createuserdto);
+  }
+  @Post('newData')
+newData(@Body() data: string){
+    return this.appService.newPostt(data);
+  }
 }

@@ -28,6 +28,9 @@ let AppController = class AppController {
         console.log(data);
         this.appService.handleUserGet(data);
     }
+    newpost(data) {
+        return this.appService.newPost(data);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -47,6 +50,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "handleUserGet", null);
+__decorate([
+    (0, microservices_1.MessagePattern)({ cmd: "data-new" }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "newpost", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

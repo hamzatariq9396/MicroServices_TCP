@@ -14,4 +14,8 @@ export class AppService {
   handleUserGet(data:any){
     console.log('handle-user-find - COMMUNICATION',data);
   }
+  newPost(data:any){
+      return data
+  }
 }
+// return this.client.send<number>(pattern, payload);
